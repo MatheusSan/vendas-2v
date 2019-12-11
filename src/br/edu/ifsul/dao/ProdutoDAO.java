@@ -136,7 +136,7 @@ public class ProdutoDAO extends BaseDAO{
             Connection conn = getConnection();
             String sql = "UPDATE produtos SET situacao=? WHERE id=?";
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, "false");
+            stmt.setBoolean(1, false);
             stmt.setLong(2, produto.getId());
             int count = stmt.executeUpdate();
             stmt.close();
